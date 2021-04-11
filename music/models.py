@@ -21,8 +21,10 @@ class Instrument(models.Model):
         ordering = ["title"]
 
     def __str__(self):
-        """Součástí textové reprezentace filmu bude jeho název, rok uvedení a hodnocení"""
-        return f"{self.title}"
+        return self.title
 
     def get_absolute_url(self):
         return reverse('instrument-detail', args=[str(self.id)])
+
+def attachment_path(instance, filename):
+    return "film/" + str(instance.film.id) + "/attachments/" + filename
