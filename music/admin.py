@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(Type)
 admin.site.register(Instrument)
+admin.site.register(Attachment)
