@@ -14,7 +14,7 @@
             {% endif %}
             <div class="card-body">
                 <h4 class="card-title"> {{ instrument.title }}</h4>
-                <p><strong>Typ</strong> {{ instrument.type }}</p>
+                <p><strong>Typ</strong> {% for typ in instrument.type.all %}{{ typ.name }}{% endfor %}</p>
                 <a href="#" class="btn btn-primary">Podrobnosti</a>
             </div>
         </div>

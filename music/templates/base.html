@@ -42,10 +42,7 @@
 <div class="container-fluid">
     {% block content %}{% endblock %}
 </div>
-<footer class="container-fluid text-center">
-    <hr>
-    <p>&copy; 2021 - SŠPU Opava</p>
-</footer>
+{% block footer %} {% include "page/footer.html" %} {% endblock %}
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- Popper JS -->
