@@ -12,33 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header class="jumbotron-fluid p-5 text-center bg-dark">
-        <h1 class="text-white text-uppercase display-3">Malá databáze hudebních nástrojů</h1>
-    </header>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <!-- Brand -->
-      <a class="navbar-brand text-warning" href="#">MDHN</a>
-
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nástroje</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Typy</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+{% block header %} {% include "page/header.html" %} {% endblock %}
+{% block navbar %} {% include "page/navbar.html" %} {% endblock %}
 <div class="container-fluid">
     {% block content %}{% endblock %}
 </div>
