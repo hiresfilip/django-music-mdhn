@@ -2,23 +2,10 @@
 {% block content %}
 <div class="row mt-3 mb-3 bg-warning p-3">
     <div class="col-sm-12">
-        <h2 class="text-center">Hudební nástroje</h2>
+        <h2 class="text-center">Úvodní stránka</h2>
     </div>
 </div>
 <div class="row">
-    {% for instrument in instruments %}
-    <div class="col-sm-4">
-        <div class="card">
-            {% if instrument.poster %}
-            <img class="card-img-top" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}">
-            {% endif %}
-            <div class="card-body">
-                <h4 class="card-title"> {{ instrument.title }}</h4>
-                <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }}{% endfor %}</p>
-                <a href="#" class="btn btn-primary">Podrobnosti</a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+    Tady něco bude
 </div>
 {% endblock %}
