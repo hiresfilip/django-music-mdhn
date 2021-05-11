@@ -1,9 +1,22 @@
-h2 {
-    /*background-color: red;*/
+/*footer {
+    color: rgba(255, 255, 255, 0.8);
+    background-image: repeating-radial-gradient(gray, rgb(100, 100, 100), black);
+    padding-bottom: 10px;
+    text-align: center;
 }
 
-footer{
-    /*color: red;
-    background-color: rgb(225,225,225);
-    padding: 10px;*/
+.navbar {
+    background-image: repeating-radial-gradient(gray, rgb(100, 100, 100));
 }
+
+body {
+    background-color: dimgray;
+}
+
+.header {
+    background-image: repeating-radial-gradient(gray, rgb(100, 100, 100), black);
+}
+
+.hdrtext {
+    color: darkgray;
+}*/

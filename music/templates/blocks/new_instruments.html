@@ -1,0 +1,17 @@
+{% load mathfilters %}
+<div>
+    {% for instrument in instruments %}
+    <div class="row mt-3 mb-3 pb-2">
+        <div class="col-md-2">
+            {% if instrument.poster %}
+            <a href="{% url 'instrument_detail' instrument.id %}"><img class="img-fluid" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}"></a>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <h4><a href="{% url 'instrument_detail' instrument.id %}">{{ instrument.title }}</a></h4>
+            <p>{{ instrument.history|truncatewords:30 }}</p>
+            <p>Žánry: {% for typ in instrument.types.all %}<a href="{% url 'instrument_type' instrument.name %}" class="btn btn-light">{{ typ.name }}</a> {% endfor %}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

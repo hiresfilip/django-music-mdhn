@@ -1,11 +1,21 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="row mt-3 mb-3 bg-warning p-3">
-    <div class="col-sm-12">
-        <h2 class="text-center">Úvodní stránka</h2>
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">Úvodní stránka</h2>
     </div>
 </div>
 <div class="row">
-    Tady něco bude
+    <div class="col-md-6">
+        <h2 class="text-center bg-success text-light p-2">Filmové novinky</h2>
+        {% include "blocks/new_instruments.html" %}
+    </div>
+    <div class="col-md-3">
+        <h2 class="text-center bg-info text-light p-2">Filmové žánry</h2>
+        {% include "blocks/type_list.html" %}
+    </div>
+</div>
+<div class="row">
 </div>
 {% endblock %}

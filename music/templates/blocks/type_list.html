@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for typ in types %}
+    <li class="list-group-item list-group-item-info"><a class="text-dark" href="{% url 'instrument_type' type.name %}">{{ type.name }}</a></li>
+    {% endfor %}
+</ul>
