@@ -21,8 +21,8 @@
                     Typy
                 </a>
                 <div class="dropdown-menu">
-                    {% for typ in instrument.type.all %}
-                    <a class="dropdown-item" href="{% url 'instrument_type' typ.name %}">{{ typ.name }}</a> {% endfor %}
+                    {% for typ in types %}
+                    <a class="dropdown-item" href="{% url 'instrument-type' typ.name %}">{{ typ.name }}</a> {% endfor %}
                 </div>
             </li>
         </ul>

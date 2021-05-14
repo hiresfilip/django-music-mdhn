@@ -29,17 +29,17 @@ class InstrumentListView(ListView):
 
 
     def get_queryset(self):
-        if 'typ_name' in self.kwargs:
-            return Instrument.objects.filter(genres__name=self.kwargs['typ_name']).all() # Get 5 books containing the title war
+        if 'type_name' in self.kwargs:
+            return Instrument.objects.filter(type__name=self.kwargs['type_name']).all() # Get 5 books containing the title war
         else:
             return Instrument.objects.all()
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        if 'typ_name' in self.kwargs:
-            context['view_title'] = f"Typ: {self.kwargs['typ_name']}"
-            context['view_head'] = f"Typ nástroje: {self.kwargs['typ_name']}"
+        if 'type_name' in self.kwargs:
+            context['view_title'] = f"Typ: {self.kwargs['type_name']}"
+            context['view_head'] = f"Typ nástroje: {self.kwargs['type_name']}"
         else:
             context['view_title'] = 'Typy'
             context['view_head'] = 'Přehled typů nastoje'
