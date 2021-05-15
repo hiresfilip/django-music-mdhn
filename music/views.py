@@ -25,7 +25,7 @@ class InstrumentListView(ListView):
 
     context_object_name = 'instrument_list'
     template_name = 'instrument/list.html'
-    paginate_by = 2
+    paginate_by = 6
 
 
     def get_queryset(self):

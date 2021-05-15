@@ -1,17 +1,15 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="row mb-3">
     <div class="col-sm-12 bg-warning">
         <h2 class="display-4 text-center">Úvodní stránka</h2>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
-        <h2 class="text-center bg-success text-light p-2">Nejvyhledávanější nástroje</h2>
+    <div class="col-md-6 col-xl-8">
+        <h2 class="text-center bg-success text-light p-2 nejvyhledavanejsi_nastroje">Nejvyhledávanější nástroje</h2>
         {% include "blocks/top_instruments.html" %}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-xl-2">
         <h2 class="text-center bg-info text-light p-2">Typy nástrojů</h2>
         {% include "blocks/type_list.html" %}
     </div>

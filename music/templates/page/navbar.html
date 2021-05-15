@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand text-warning" href="#">MDHN</a>
+    <a class="navbar-brand text-warning" href="{% url 'index' %}">MDHN</a>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -14,15 +14,15 @@
                 <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'instrument_list' %}">Nástroje</a>
+                <a class="nav-link text-white" href="{% url 'instrument_list' %}">Nástroje</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link text-white dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Typy
                 </a>
                 <div class="dropdown-menu">
                     {% for typ in types %}
-                    <a class="dropdown-item" href="{% url 'instrument-type' typ.name %}">{{ typ.name }}</a> {% endfor %}
+                    <a class="dropdown-item text-white bg-dark" href="{% url 'instrument-type' typ.name %}">{{ typ.name }}</a> {% endfor %}
                 </div>
             </li>
         </ul>

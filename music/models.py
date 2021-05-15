@@ -23,7 +23,6 @@ class Type(models.Model):
 class Instrument(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
     history = models.TextField(blank=True, null=True, verbose_name="History")
-    """ Zde mi to hlásí chybu, že nesná poster_path, ale proč? Vždy o několik řádků níž je poster_path definován. """
     poster = models.ImageField(upload_to=poster_path, blank=True, null=True, verbose_name="Poster")
     type = models.ManyToManyField(Type, help_text='Select a type for this instrument')
 

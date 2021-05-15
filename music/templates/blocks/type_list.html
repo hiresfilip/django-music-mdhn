@@ -1,5 +1,5 @@
 <ul class="list-group">
     {% for type in types %}
-    <li class="list-group-item list-group-item-info"><a class="text-dark" href="{% url 'instrument-type' type.name %}">{{ type.name }}</a></li>
+    <li class="list-group-item list-group-item-primary"><a class="ab" href="{% url 'instrument-type' type.name %}">{{ type.name }}</a></li>
     {% endfor %}
 </ul>

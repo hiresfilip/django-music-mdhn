@@ -1,4 +1,4 @@
-/*footer {
+footer {
     color: rgba(255, 255, 255, 0.8);
     background-image: repeating-radial-gradient(gray, rgb(100, 100, 100), black);
     padding-bottom: 10px;
@@ -10,7 +10,12 @@
 }
 
 body {
-    background-color: dimgray;
+    /*background-color: dimgray;*/
+    background-color: #1e1e1e;
+}
+
+p {
+    color: white;
 }
 
 .header {
@@ -19,4 +24,46 @@ body {
 
 .hdrtext {
     color: darkgray;
-}*/
+}
+
+.card {
+    background-color: #1e1e1e !important;
+}
+
+a {
+    color: gray;
+}
+
+.ag:hover {
+    color: greenyellow;
+}
+
+.ab:hover {
+    color: blue;
+}
+
+.ab {
+    color: black;
+}
+
+h4 {
+    color: white;
+}
+
+.nejvyhledavanejsi_nastroje {
+    background-color: springgreen;
+}
+
+.detail {
+    color: lightgray;
+}
+
+.fotogalerie {
+    background-color: #1e1e1e;
+    /*border: 2px solid white;*/
+}
+
+.fotogalerie-nazev {
+    text-align: center;
+    color: antiquewhite !important;
+}

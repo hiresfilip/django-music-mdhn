@@ -1,7 +1,4 @@
-{% extends "base.html" %}
-{% load bootstrap_pagination %}
-
-{% block content %}
+{% extends "base.html" %} {% load bootstrap_pagination %} {% block content %}
 <div class="row mt-3 mb-3 bg-warning p-3">
     <div class="col-sm-12">
         <h2 class="text-center">Hudební nástroje</h2>
@@ -12,16 +9,14 @@
     <div class="col-sm-4 col-xl-2">
         <div class="card">
             {% if instrument.poster %}
-            <img class="card-img-top" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}">
-            {% endif %}
+            <img class="card-img-top" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}"> {% endif %}
             <div class="card-body">
                 <h4 class="card-title"> {{ instrument.title }}</h4>
-                <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }}{% endfor %}</p>
-                <a href="{% url 'instrument_detail' instrument.pk %}" class="btn btn-primary">Podrobnosti</a>
+                <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }} {% endfor %}</p>
+                <a href="{% url 'instrument_detail' instrument.pk %}" class="btn btn-dark">Podrobnosti</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-{% bootstrap_paginate page_obj range=10 %}
-{% endblock %}
+{% bootstrap_paginate page_obj range=10 %} {% endblock %}
