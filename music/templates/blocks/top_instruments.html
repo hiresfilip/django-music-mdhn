@@ -4,11 +4,11 @@
     <div class="row mt-3 mb-3 pb-2">
         <div class="col-md-2">
             {% if instrument.poster %}
-            <a href="{% url 'instrument_detail' instrument.id %}"><img class="img-fluid" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}"></a>
+            <a href="{% url 'instrument-detail' instrument.id %}"><img class="img-fluid" src="{{ instrument.poster.url }}" alt="{{ instrument.title }}"></a>
             {% endif %}
         </div>
         <div class="col-md-8">
-            <h4><a class="ag" href="{% url 'instrument_detail' instrument.id %}">{{ instrument.title }}</a></h4>
+            <h4><a class="ag" href="{% url 'instrument-detail' instrument.id %}">{{ instrument.title }}</a></h4>
             <p>{{ instrument.history|truncatewords:30 }}</p>
             <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }} {% endfor %}</p>
         </div>

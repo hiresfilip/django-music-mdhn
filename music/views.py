@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
 from .models import Instrument
 
 
@@ -44,3 +45,18 @@ class InstrumentListView(ListView):
             context['view_title'] = 'Typy'
             context['view_head'] = 'Přehled typů nastoje'
         return context
+
+
+class InstrumentCreateView(CreateView):
+    model = Instrument
+    fields = ['title', 'history', 'poster', 'type']
+
+
+class InstrumentUpdateView(UpdateView):
+    model = Instrument
+    fields = '__all__'
+
+
+class InstrumentDeleteView(DeleteView):
+    model = Instrument
+    success_url = reverse_lazy('instrument_list')

@@ -13,10 +13,14 @@
             <div class="card-body">
                 <h4 class="card-title"> {{ instrument.title }}</h4>
                 <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }} {% endfor %}</p>
-                <a href="{% url 'instrument_detail' instrument.pk %}" class="btn btn-dark">Podrobnosti</a>
+                <a href="{% url 'instrument-detail' instrument.pk %}" class="btn btn-dark">Podrobnosti</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-{% bootstrap_paginate page_obj range=10 %} {% endblock %}
+{% bootstrap_paginate page_obj range=10 %}
+<div>
+    <a href="{% url 'instrument-create'%}" class="btn btn-success">Nový hudební nástroj</a>
+</div>
+{% endblock %}

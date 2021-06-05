@@ -32,6 +32,10 @@
         </div>
     </div>
 </div>
+<div>
+    <a href="{% url 'instrument-update' instrument_detail.pk %}" class="btn btn-primary">Editovat</a>
+    <a href="{% url 'instrument-delete' instrument_detail.pk %}" class="btn btn-danger">Smazat</a>
+</div>
 {% endblock %} {% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 <script>
