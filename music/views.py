@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
+
+from .forms import InstrumentModelForm
 from .models import Instrument
 
 
@@ -54,7 +56,8 @@ class InstrumentCreateView(CreateView):
 
 class InstrumentUpdateView(UpdateView):
     model = Instrument
-    fields = '__all__'
+    form_class = InstrumentModelForm
+    template_name = 'music/instrument_bootstrap_form.html'
 
 
 class InstrumentDeleteView(DeleteView):
