@@ -19,6 +19,9 @@ class Type(models.Model):
     def __str__(self):
         return self.name
 
+    def instrument_count(self, obj):
+        return obj.instrument_set.instrument_count()
+
 
 class Instrument(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
@@ -34,6 +37,9 @@ class Instrument(models.Model):
 
     def get_absolute_url(self):
         return reverse('instrument-detail', args=[str(self.id)])
+
+    def count_types(self):
+        return self.count_types()
 
 class Attachment(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
@@ -57,3 +63,18 @@ class Attachment(models.Model):
     def __str__(self):
         return f"{self.title}, ({self.type})"
 
+
+    @property
+    def filesize(self):
+        x = self.file.size
+        y = 512000
+        if x < y * 1000:
+            value = round(x / 1024, 2)
+            ext = ' KB'
+        elif x < y * 1000 ** 2:
+            value = round(x / 1024 ** 2, 2)
+            ext = ' MB'
+        else:
+            value = round(x / 1024 ** 3, 2)
+            ext = ' GB'
+        return str(value) + ext
