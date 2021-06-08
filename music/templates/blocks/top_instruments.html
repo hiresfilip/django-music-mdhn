@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <h4><a class="ag" href="{% url 'instrument-detail' instrument.id %}">{{ instrument.title }}</a></h4>
             <p>{{ instrument.history|truncatewords:30 }}</p>
-            <p><strong>Typ:</strong> {% for typ in instrument.type.all %}{{ typ.name }} {% endfor %}</p>
+            <p><strong>Typ:</strong>{% for typ in instrument.type.all %} <a href="{% url 'instrument-type' typ.name %}" class="btn btn-dark">{{ typ.name }}</a> {% endfor %}</p>
         </div>
     </div>
     {% endfor %}

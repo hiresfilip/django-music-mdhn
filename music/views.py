@@ -52,6 +52,8 @@ class InstrumentListView(ListView):
 class InstrumentCreateView(CreateView):
     model = Instrument
     fields = ['title', 'history', 'poster', 'type']
+    #form_class = InstrumentModelForm
+    template_name = 'music/instrument_create_bootstrap_form.html'
 
 
 class InstrumentUpdateView(UpdateView):
