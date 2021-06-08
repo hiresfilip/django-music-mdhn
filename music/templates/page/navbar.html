@@ -9,7 +9,7 @@
 
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
             </li>
@@ -25,6 +25,14 @@
                     <a class="dropdown-item text-white bg-dark" href="{% url 'instrument-type' typ.name %}">{{ typ.name }}</a> {% endfor %}
                 </div>
             </li>
+        </ul>
+        <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'index' %}" class="nav-link text-warning">User: {{ user.get_username }}</a></li>
+            <li class="nav-item"><a href="{% url 'logout'%}" class="nav-link text-warning">Logout</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'login'%}?next={{request.path}}" class="nav-link text-warning">Login</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
