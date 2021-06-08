@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
@@ -49,19 +50,24 @@ class InstrumentListView(ListView):
         return context
 
 
-class InstrumentCreateView(CreateView):
+class InstrumentCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Instrument
     fields = ['title', 'history', 'poster', 'type']
     #form_class = InstrumentModelForm
     template_name = 'music/instrument_create_bootstrap_form.html'
+    login_url = '/accounts/login/'
+    permission_required = 'music.add_instrument'
 
-
-class InstrumentUpdateView(UpdateView):
+class InstrumentUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Instrument
     form_class = InstrumentModelForm
     template_name = 'music/instrument_bootstrap_form.html'
+    login_url = '/accounts/login/'
+    permission_required = 'music.change_instrument'
 
 
-class InstrumentDeleteView(DeleteView):
+class InstrumentDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Instrument
     success_url = reverse_lazy('instrument_list')
+    login_url = '/accounts/login/'
+    permission_required = 'music.delete_instrument'
