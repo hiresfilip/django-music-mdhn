@@ -71,3 +71,21 @@ class InstrumentDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteVi
     success_url = reverse_lazy('instrument_list')
     login_url = '/accounts/login/'
     permission_required = 'music.delete_instrument'
+
+
+
+
+def error_404(request, exception=None):
+        return render(request, 'errors/404.html')
+
+
+def error_500(request):
+    return render(request, 'errors/500.html')
+
+
+def error_403(request, exception=None):
+    return render(request, 'errors/403.html')
+
+
+def error_400(request, exception=None):
+    return render(request, 'errors/400.html')

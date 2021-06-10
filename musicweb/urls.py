@@ -24,7 +24,7 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)"""
 
 
-"""handler404 = 'music.views.error_404'
+handler404 = 'music.views.error_404'
 handler500 = 'music.views.error_500'
 handler403 = 'music.views.error_403'
 handler400 = 'music.views.error_400'
@@ -38,4 +38,4 @@ if settings.DEBUG:
     urlpatterns += [re_path(r'^500/$', music.views.error_500)]
     urlpatterns += [re_path(r'^400/$', music.views.error_400)]
     urlpatterns += [re_path(r'^404/$', music.views.error_404)]
-    urlpatterns += [re_path(r'^403/$', music.views.error_403)]"""
+    urlpatterns += [re_path(r'^403/$', music.views.error_403)]

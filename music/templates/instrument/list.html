@@ -19,12 +19,19 @@
     </div>
     {% endfor %}
 </div>
-{% bootstrap_paginate page_obj range=10 %}
+
 {% if user.is_authenticated %}
-<div>
-    {% if perms.movies.create_instrument %}
-    <a href="{% url 'instrument-create'%}" class="btn btn-success">Nový hudební nástroj</a>
-    {% endif %}
+<div class="row">
+    <div class="col-12">
+        {% if perms.music.add_instrument %}
+        <a href="{% url 'instrument-create'%}" class="btn btn-success">Nový hudební nástroj</a>
+        {% endif %}
+    </div>
 </div>
 {% endif %}
+<div class="row mt-3">
+    <div class="col-12">
+        {% bootstrap_paginate page_obj range=10 %}
+    </div>
+</div>
 {% endblock %}

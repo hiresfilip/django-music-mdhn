@@ -34,9 +34,9 @@
 </div>
 {% if user.is_authenticated %}
 <div>
-    {% if perms.movies.change_instrument %}
+    {% if perms.music.change_instrument %}
     <a href="{% url 'instrument-update' instrument_detail.pk %}" class="btn btn-primary">Editovat</a> {% endif %}
-    {% if perms.movies.delete_instrument %}
+    {% if perms.music.delete_instrument %}
     <a href="{% url 'instrument-delete' instrument_detail.pk %}" class="btn btn-danger">Smazat</a> {% endif %}
 {% endif %}
 </div>
